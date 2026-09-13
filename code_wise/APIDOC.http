@@ -1,0 +1,83 @@
+# api call for listing all questions
+GET http://127.0.0.1:8000/questions/
+
+# api call for create all questions
+###
+POST  http://127.0.0.1:8000/questions/
+Content-Type: application/json
+
+{
+    "title":"write a program to print largest of two number",
+    "language":"python",
+    "difficulty_level":"easy",
+    "topic":"decision making",
+    "sample_input":"num1=100,num2=200",
+    "sample_output":"largest number is num2"
+}
+
+###
+# api call for retrieve questions
+GET  http://127.0.0.1:8000/questions/1
+
+# api call for update
+###
+PUT http://127.0.0.1:8000/questions/1/
+Content-Type: application/json
+
+{
+    "title":"write a program to print smallest of two number",
+    "language":"python",
+    "difficulty_level":"hard",
+    "topic":"decision making",
+    "sample_input":"num1=100,num2=200",
+    "sample_output":"largest number is num2"
+}
+
+# api call for delete
+###
+DELETE http://127.0.0.1:8000/questions/2/
+
+
+
+
+
+# api call for submission listing
+###
+GET  http://127.0.0.1:8000/submission/
+
+# api call for create
+###
+POST http://127.0.0.1:8000/submission/
+Content-Type: application/json
+
+{
+    "answer":"num3",
+    "question_id":100,
+    "owner":"liya"
+
+}
+
+# api call for retrieve
+###
+GET http://127.0.0.1:8000/submission/1
+
+# api call for update
+###
+PUT http://127.0.0.1:8000/submission/1/
+Content-Type: application/json
+
+{
+    "answer":"num1",
+    "question_id":2,
+    "owner":"liya"
+}
+
+# api call for evaluate
+###
+PUT http://127.0.0.1:8000/submission/1/evaluate
+Content-Type: application/json
+
+{
+    "points":50,
+    "remarks":"avg logic"
+}

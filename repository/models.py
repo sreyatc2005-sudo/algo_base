@@ -27,4 +27,16 @@ class Questions(models.Model):
     sample_input=models.TextField()
     sample_output=models.TextField()
     is_active=models.BooleanField(default=True)
-    
+
+class Submission(models.Model):
+    answer=models.TextField()
+    question_id=models.IntegerField()
+    points=models.PositiveBigIntegerField(null=True)
+    owner=models.CharField(max_length=200)
+    submission_date=models.DateTimeField(auto_now_add=True)
+    remarks=models.TextField(null=True)   
+
+class Evaluate(models.Model):
+    points=models.IntegerField()
+    remarks=models.CharField(max_length=200)
+ 

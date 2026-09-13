@@ -16,7 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from repository.views import QuestionsListCreateView
+from repository.views import QuestionRetrieveUpdateDeleteView
+from repository.views import SubmissionListCreateView
+from repository.views import SubmissionRetrieveUpdateDeleteView
+from repository.views import EvaluateSubmissionView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("questions/",QuestionsListCreateView.as_view()),
+    path("questions/<int:pk>/",QuestionRetrieveUpdateDeleteView.as_view()),
+    path("submission/",SubmissionListCreateView.as_view()),
+    path("submission/<int:pk>/",SubmissionRetrieveUpdateDeleteView.as_view()),
+    path("submission/<int:pk>/evaluate",EvaluateSubmissionView.as_view()),
+
+    
 ]
